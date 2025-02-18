@@ -4,9 +4,9 @@ An out of the world website that showcases all the wonders in the field of astro
 ![LandingPage](https://github.com/user-attachments/assets/0ea29c2e-b282-4e51-a6f2-65d2e27b7a59)
 
 # TechStack/Development Tools:
-**HTML**---
-**CSS**---
-**JavaScript**---
+**HTML**  
+**CSS**  
+**JavaScript**  
 **Superflex-** Wonderful extension that uses ai to convert your prompt/design image into code.
 ![Superflex Demo](https://github.com/user-attachments/assets/035fccf7-7069-445e-82d9-aa29016a1c6e)
 
