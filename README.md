@@ -1,4 +1,4 @@
-# SpaceMuse- getaway to the infinity!
+# SpaceMuse- Your gateway to infinity!
 An out of the world website that showcases all the wonders in the field of astronomy. It feautures users to view space events, know more about space and also get best astronomical book recommendations. Built with help of [Superflex](https://www.superflex.ai/) extension on VS Code that helped in rapid prototyping and faster integration of moder UI.  
 
 ![Homepage](https://github.com/user-attachments/assets/d7ce5a04-ee5f-4942-8f70-77b6a11e5153)
