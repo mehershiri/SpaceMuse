@@ -1,0 +1,217 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    background-image: url('images/SpaceFinal.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrollbars during animation */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+/* Page Container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* Content */
+.content {
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, rgba(229, 229, 231, 0.973), rgba(255, 255, 255, 0.781));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    width: 100%;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #c2a2e2, #ece9ec);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Start Button */
+.start-button {
+    font-family: 'Orelega One', sans-serif;
+    position: relative;
+    padding: 14px 45px;
+    font-size: 1.3rem;
+    background: rgba(156, 155, 155, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.start-button:hover {
+    background: rgba(100, 100, 100, 0.4);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Rocket Body */
+/* Rocket Body */
+.rocket {
+    position: absolute;
+    width: 40px; /* Adjusted for better proportions */
+    height: 110px; /* Increase the height to make room for the rounded bottom */
+    background: #e7e6e6; /* Pure white color */
+    border-radius: 50px 50px 60px 60px; /* Rounded bottom to match the fins */
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px rgba(116, 113, 113, 0.5); /* Glowing effect */
+    display: none; /* Hidden initially */
+    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+}
+
+/* Rocket Window */
+.rocket .window {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(141, 138, 138, 0.9);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 5px solid #181717;
+}
+
+/* Black Circle Inside Rocket */
+.rocket .black-circle {
+    content: "";
+    position: absolute;
+    top: 30%; /* Position the black circle towards the middle of the rocket */
+    left: 50%;
+    width: 20px; /* Size of the black circle */
+    height: 20px; /* Size of the black circle */
+    background: #cdafd6; /* Black color */
+    border-radius: 50%; /* Makes the shape a circle */
+    transform: translateX(-50%) translateY(-50%); /* Centers it inside the rocket */
+    outline: 3px solid black;
+}
+
+/* Rocket Fins */
+.rocket::after {
+    content: "";
+    position: absolute;
+    bottom: -40px; /* Move fins to the bottom of the rocket */
+    left: 50%;
+    width: 80px; /* Adjust width for better proportion */
+    height: 55px; /* Increase height for a more realistic fin size */
+    background: #8d8a8a;
+    transform: translateX(-50%) rotate(0deg); /* Flip the fins upside down */
+    clip-path: polygon(5% 100%, 25% 60%, 75% 60%, 95% 100%, 70% 0%, 30% 0%); /* More realistic angular fins upside down */
+    border-radius:30px;
+}
+
+/* Rocket Tip */
+.rocket::before {
+    content: "";
+    position: absolute;
+    top: -40px; /* Moved up to make room for taller cone */
+    left: 50%;
+    width: 40px; /* Match rocket width */
+    height: 50px; /* Taller for cone shape */
+    background: #a977b3;
+    transform: translateX(-50%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Creates triangle/cone shape */
+    border-radius: 7px; /* Slight rounding */
+}
+
+
+/* Flame effect */
+.rocket-flame {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 70px;
+    background: linear-gradient(to bottom, #e71ce7, transparent);
+    /*background: linear-gradient(to bottom, rgba(116, 35, 116, 0.9), rgba(158, 89, 137, 0.89));*/
+    border-radius: 50% 50% 20% 20%;
+    animation: flameFlicker 0.3s infinite alternate;
+}
+
+@keyframes flameFlicker {
+    0% {
+        height: 40px;
+        opacity: 0.8;
+    }
+    100% {
+        height: 50px;
+        opacity: 2;
+    }
+}
+
+.launch {
+    display: block;
+    animation: rocketLaunch 4s linear forwards;
+}
+
+@keyframes rocketLaunch {
+    0% {
+        top: 100%;
+        left: 0%;  
+        transform: translate(0, 0) rotate(10deg) scale(1);
+        opacity: 1;
+    }
+    70% {
+        top: 60%;
+        left: 40%;
+        transform: translate(-50%, -50%) rotate(35deg) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        top: 8%;  
+        left: 90%; 
+        transform: translate(-50%, -50%) rotate(75deg) scale(1.5);
+        opacity: 1;
+    }
+}
+

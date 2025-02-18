@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceMuse - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <div class="content">
+            <div class="header-container">
+                <h1 class="title">
+                    Welcome to <span class="gradient-text">SpaceMuse</span>
+                </h1>
+                <div class="rocket">
+                    <div class="rocket-flame"></div>
+                    <div class="black-circle"></div>
+                </div>
+            </div>
+            
+            <div class="button-wrapper">
+                <button class="start-button">Mission starts in 3..2..1..</button>
+            </div>
+        </div>
+    </main>
+
+    <audio id="missionAudio" src="C:\Users\wow\Downloads\rocket-launch-sfx-253937.mp3" preload="auto"></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const startButton = document.querySelector(".start-button");
+            const rocket = document.querySelector(".rocket");
+            const missionAudio = document.getElementById("missionAudio");
+
+            startButton.addEventListener("click", function() {
+                missionAudio.play();  // Play the audio
+
+                rocket.classList.add("launch");  // Add the launch animation
+
+                setTimeout(() => {
+                    window.location.href = "secondpage.html";  // Redirect after animation
+                }, 4000); // Wait for 10 seconds (time of animation)
+            });
+        });
+    </script>
+</body>
+</html>
