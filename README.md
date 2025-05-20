@@ -14,7 +14,8 @@ An out of the world website that showcases all the wonders in the field of astro
 
 ![Superflex Demo](https://github.com/user-attachments/assets/035fccf7-7069-445e-82d9-aa29016a1c6e)  
 
-
+#Live Link:
+https://mehershiri.github.io/SpaceMuse/
 # Installation  
 
 For detailed installation instructions, please visit [the installation guide](https://example.com/installation-guide).
